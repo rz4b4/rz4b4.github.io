@@ -181,6 +181,51 @@ body {
     box-shadow: 0 1px 4px #39ff1422;
 }
 
+.stat-label {
+    color: var(--fg-dim);
+    font-weight: 700;
+    margin-right: 0.3em;
+}
+
+.stat-value {
+    font-weight: 700;
+    transition: color 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+}
+
+.stat-value.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#hub-stats .stat-value,
+#hub-stats .stat-unit {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+}
+
+#hub-stats .stat-value.revealed,
+#hub-stats .stat-unit.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Safe: green, warning: orange, danger: red */
+.stat-safe {
+    color: #39ff14;
+}
+
+.stat-warning {
+    color: #ffae00;
+}
+
+.stat-danger {
+    color: #ff3c3c;
+}
+
 @media (max-width: 600px) {
     .hacker-container {
         padding: 1.2rem 0.3rem 1rem 0.3rem;
