@@ -16,16 +16,54 @@
         </div>
         <section class="hacker-section" id="hub-stats">
             <h2>// hub statistics</h2>
-            <ul class="hacker-list" id="stats-list">
-                <li><span class="stat-label">temperature</span>: <span class="stat-value" id="stat-temp">--<span
-                            class="stat-unit"> °C</span></span></li>
-                <li><span class="stat-label">humidity</span>: <span class="stat-value" id="stat-humidity">--<span
-                            class="stat-unit"> %</span></span></li>
-                <li><span class="stat-label">outside temperature</span>: <span class="stat-value"
-                        id="stat-outside">--<span class="stat-unit"> °C</span></span></li>
-                <li><span class="stat-label">cosmic radiation</span>: <span class="stat-value"
-                        id="stat-radiation">--<span class="stat-unit"> μSv/h</span></span></li>
-            </ul>
+            <div class="stats-grid">
+                <div class="stats-group">
+                    <div class="stats-group-title">environment</div>
+                    <div class="stat-row"><span class="stat-label">temperature</span> <span class="stat-value"
+                            id="stat-temp">--<span class="stat-unit"> °C</span></span><span class="stat-side"
+                            id="side-temp"></span></div>
+                    <div class="stat-row"><span class="stat-label">humidity</span> <span class="stat-value"
+                            id="stat-humidity">--<span class="stat-unit"> %</span></span><span class="stat-side"
+                            id="side-humidity"></span></div>
+                    <div class="stat-row"><span class="stat-label">outside temp</span> <span class="stat-value"
+                            id="stat-outside">--<span class="stat-unit"> °C</span></span><span class="stat-side"
+                            id="side-outside"></span></div>
+                    <div class="stat-row"><span class="stat-label" data-label="cosmic radiation">cosmic radiation</span>
+                        <span class="stat-value" id="stat-radiation">--<span class="stat-unit"> μSv/h</span></span><span
+                            class="stat-side" id="side-radiation"></span></div>
+                    <div class="stat-row"><span class="stat-label">air pressure</span> <span class="stat-value"
+                            id="stat-pressure">--<span class="stat-unit"> hPa</span></span><span class="stat-side"
+                            id="side-pressure"></span></div>
+                    <div class="stat-row"><span class="stat-label">oxygen</span> <span class="stat-value"
+                            id="stat-oxygen">--<span class="stat-unit"> %</span></span><span class="stat-side"
+                            id="side-oxygen"></span></div>
+                    <div class="stat-row"><span class="stat-label">CO₂</span> <span class="stat-value"
+                            id="stat-co2">--<span class="stat-unit"> ppm</span></span><span class="stat-side"
+                            id="side-co2"></span></div>
+                </div>
+                <div class="stats-group">
+                    <div class="stats-group-title">systems</div>
+                    <div class="stat-row"><span class="stat-label">solar panel</span> <span class="stat-value"
+                            id="stat-solar">--<span class="stat-unit"> kW</span></span><span class="stat-side"
+                            id="side-solar"></span></div>
+                    <div class="stat-row"><span class="stat-label">power reserve</span> <span class="stat-value"
+                            id="stat-power">--<span class="stat-unit"> %</span></span><span class="stat-side"
+                            id="side-power"></span></div>
+                    <div class="stat-row"><span class="stat-label">shield</span> <span class="stat-value"
+                            id="stat-shield">--<span class="stat-unit"></span></span><span class="stat-side"
+                            id="side-shield"></span></div>
+                    <div class="stat-row"><span class="stat-label">warp drive</span> <span class="stat-value"
+                            id="stat-warp">--<span class="stat-unit"></span></span><span class="stat-side"
+                            id="side-warp"></span></div>
+                </div>
+                <div class="stats-group">
+                    <div class="stats-group-title">status</div>
+                    <div class="stat-row"><span class="stat-label">visitors</span> <span class="stat-value"
+                            id="stat-visitors">--<span class="stat-unit"></span></span><span class="stat-side"
+                            id="side-visitors"></span></div>
+                </div>
+            </div>
+            <div class="stats-updated" id="stats-updated"></div>
         </section>
         <section class="hacker-section">
             <h2>// what's this place</h2>

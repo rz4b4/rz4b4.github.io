@@ -181,49 +181,122 @@ body {
     box-shadow: 0 1px 4px #39ff1422;
 }
 
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.stats-group {
+    background: rgba(16, 16, 20, 0.7);
+    border: 1.5px solid var(--card-border, #23232a);
+    border-radius: 0.7em;
+    padding: 0.7em 0.7em 0.5em 0.7em;
+    margin-bottom: 0.5em;
+    box-shadow: 0 2px 12px #39ff1422;
+}
+
+.stats-group-title {
+    color: var(--accent);
+    font-size: 0.95em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.3em;
+    font-family: inherit;
+    font-size: 0.92em;
+    letter-spacing: 0.2px;
+    min-width: 0;
+    justify-content: flex-start;
+}
+
 .stat-label {
+    display: inline-block;
+    min-width: 12em;
+    max-width: 16em;
     color: var(--fg-dim);
     font-weight: 700;
-    margin-right: 0.3em;
+    margin-right: 0.2em;
+    font-size: 0.95em;
+    flex-shrink: 0;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stat-label::after {
+    content: ':';
+    margin-left: 0.5em;
+    display: inline-block;
+    width: 1em;
+    text-align: left;
 }
 
 .stat-value {
+    font-family: inherit;
+    font-size: 0.95em;
     font-weight: 700;
+    min-width: 3em;
+    display: inline-block;
     transition: color 0.3s;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+    position: relative;
+    word-break: break-all;
+    margin-left: 0.7em;
 }
 
-.stat-value.revealed {
-    opacity: 1;
-    transform: translateY(0);
+.stat-value.stat-warning::after {
+    content: '';
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-left: 0.3em;
+    border-radius: 50%;
+    background: #ffae00;
+    animation: blink 1s steps(1) infinite;
+    vertical-align: middle;
 }
 
-#hub-stats .stat-value,
-#hub-stats .stat-unit {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+.stat-value.stat-danger::after {
+    content: '';
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-left: 0.3em;
+    border-radius: 50%;
+    background: #ff3c3c;
+    animation: blink 0.6s steps(1) infinite;
+    vertical-align: middle;
 }
 
-#hub-stats .stat-value.revealed,
-#hub-stats .stat-unit.revealed {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
 }
 
-/* Safe: green, warning: orange, danger: red */
-.stat-safe {
-    color: #39ff14;
-}
-
-.stat-warning {
-    color: #ffae00;
-}
-
-.stat-danger {
-    color: #ff3c3c;
+.stats-updated {
+    color: var(--fg-dim);
+    font-size: 0.95em;
+    margin-top: 0.7em;
+    text-align: right;
+    opacity: 0.7;
+    font-family: inherit;
 }
 
 @media (max-width: 600px) {
@@ -242,4 +315,10 @@ body {
     .hacker-section {
         padding-left: 0.7rem;
     }
+}
+
+/* Special case for cosmic radiation label to fit better */
+.stat-label[data-label="cosmic radiation"] {
+    min-width: 12em;
+    max-width: 16em;
 }
