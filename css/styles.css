@@ -1,55 +1,200 @@
+:root {
+    --bg: #101014;
+    --fg: #39ff14;
+    --fg-dim: #b2ffb2;
+    --accent: #39ff14;
+    --accent-soft: #39ff1480;
+    --border: #23232a;
+    --radius: 0.5em;
+    --transition: 0.2s cubic-bezier(.4, 0, .2, 1);
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    background: var(--bg);
+    color: var(--fg);
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    letter-spacing: 0.5px;
+    font-size: 1.08rem;
 }
 
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
+.hacker-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2.5rem 1.2rem 1.5rem 1.2rem;
 }
 
-h1 {
+.hacker-header {
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.hacker-typed {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    letter-spacing: 2px;
+    white-space: pre;
+    min-height: 2.5rem;
+}
+
+.hacker-section {
+    margin-bottom: 2.2rem;
+    border-left: 2.5px solid var(--accent);
+    padding-left: 1.2rem;
+    background: none;
+}
+
+.hacker-section h2 {
+    color: var(--fg-dim);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+.hacker-list {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-nav {
-    margin: 20px 0;
+.hacker-list li {
+    margin-bottom: 0.7rem;
+    font-size: 1.05rem;
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
+.hacker-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-top: 1.2em;
+    background: none;
+    border-left: none;
+    padding-left: 0;
+    position: relative;
+    align-items: flex-start;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.hacker-section form label {
+    color: var(--fg-dim);
+    font-size: 0.98em;
+    margin-bottom: 0.1em;
+    letter-spacing: 1px;
+    font-family: inherit;
+    opacity: 0.8;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+.hacker-section form input,
+.hacker-section form textarea {
+    font-family: inherit;
+    background: transparent;
+    color: var(--fg);
+    border: none;
+    border-bottom: 1.5px solid var(--accent-soft);
+    border-radius: 0;
+    padding: 0.5em 0.2em 0.5em 0.2em;
+    margin-bottom: 0.7em;
+    font-size: 1em;
+    width: 100%;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    box-shadow: none;
 }
 
-.section {
-    background: #ffffff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.hacker-section form input:focus,
+.hacker-section form textarea:focus {
+    outline: none;
+    border-bottom: 1.5px solid var(--accent);
+    background: transparent;
+    color: var(--fg);
+}
+
+.hacker-section form .btn {
+    background: none;
+    color: var(--accent);
+    border: none;
+    border-bottom: 1.5px solid var(--accent);
+    border-radius: 0;
+    padding: 0.5em 0;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color var(--transition), border-color var(--transition);
+    margin-top: 0.7em;
+    align-self: flex-start;
+    box-shadow: none;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
+.hacker-section form .btn:hover {
+    color: #101014;
+    background: var(--accent);
+    border-bottom: 1.5px solid var(--accent);
+}
+
+.hacker-section form .hacker-form-prompt {
+    color: var(--accent);
+    font-family: inherit;
+    font-size: 1.1em;
+    margin-bottom: 0.7em;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    user-select: none;
 }
 
 .footer {
     text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    color: var(--fg-dim);
+    font-size: 0.95em;
+    margin-top: 2.5rem;
+    padding: 1.2rem 0 0.7rem 0;
+    border-top: 1px solid var(--border);
+}
+
+::selection {
+    background: var(--accent-soft);
+}
+
+.company-role {
+    color: var(--fg-dim);
+    font-size: 0.95em;
+    font-weight: 700;
+    background: rgba(57, 255, 20, 0.08);
+    border: 1px solid var(--accent-soft);
+    border-radius: 0.4em;
+    padding: 0.08em 0.5em 0.08em 0.5em;
+    margin-left: 0.5em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    display: inline-block;
+    box-shadow: 0 1px 4px #39ff1422;
+}
+
+@media (max-width: 600px) {
+    .hacker-container {
+        padding: 1.2rem 0.3rem 1rem 0.3rem;
+    }
+
+    .hacker-header {
+        margin-bottom: 1.2rem;
+    }
+
+    .hacker-typed {
+        font-size: 1.3rem;
+    }
+
+    .hacker-section {
+        padding-left: 0.7rem;
+    }
 }

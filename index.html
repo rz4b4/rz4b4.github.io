@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>rzaba's intergalactic hub</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <main class="hacker-container">
+        <div class="hacker-header">
+            <pre id="rzaba-typed" class="hacker-typed"></pre>
+        </div>
+        <section class="hacker-section">
+            <h2>// what's this place</h2>
+            <p>
+                Welcome to rzaba's intergalactic hub.<br><br>
+                This is the central terminal for navigating the universe of my work.
+                Choose your destination: explore projects, connect, or launch into new galaxies.
+            </p>
+        </section>
+        <section class="hacker-section">
+            <h2>// companies</h2>
+            <ul class="hacker-list">
+                <li><span class="accent">[psie pogotowie]</span><span class="company-role">CEO</span> - animal rescue
+                    with autonomous drones, created by rzaba & syn
+                </li>
+                <li><span class="accent">[company with carpets]</span><span class="company-role">CEO</span> - building
+                    flying carpets</li>
+                <li><span class="accent">[potato cloud]</span><span class="company-role">CEO</span> - decentralized
+                    hosting powered by GLaDOS</li>
+                <li><span class="accent">[quantum pizza]</span><span class="company-role">CEO</span> - pizza that is
+                    both delivered and not delivered until you open the box</li>
+                <li><span class="accent">[softcat]</span><span class="company-role">CEO</span> - operating systems for
+                    cats</li>
+                <li><span class="accent">[wifi umbrella]</span><span class="company-role">CEO</span> - portable wifi
+                    hotspot built into an umbrella</li>
             </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>This section contains information about me and my background.</p>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Here are some of the projects I have worked on:</p>
-        <ul>
-            <li>Project 1: Description of project 1.</li>
-            <li>Project 2: Description of project 2.</li>
-            <li>Project 3: Description of project 3.</li>
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you would like to get in touch, please reach out via email.</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2023 My Portfolio</p>
+        </section>
+        <section class="hacker-section">
+            <h2>// projects</h2>
+            <ul class="hacker-list">
+                <li><span class="accent">[mikulagpt]</span> - shitpost LLM</li>
+                <li><span class="accent">[rpibot]</span> - autonomous raspberry pi robot</li>
+            </ul>
+        </section>
+        <section class="hacker-section">
+            <h2>// contact</h2>
+            <form id="contact-form" autocomplete="off">
+                <div class="hacker-form-prompt">$ echo contact rzaba</div>
+                <label for="name">name</label>
+                <input id="name" name="name" type="text" placeholder="your name" required />
+                <label for="email">email</label>
+                <input id="email" name="email" type="email" placeholder="your@email.com" required />
+                <label for="message">message</label>
+                <textarea id="message" name="message" placeholder="your message" required></textarea>
+                <button type="submit" class="btn">send</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 rzaba</p>
     </footer>
-    
     <script src="js/main.js"></script>
 </body>
+
 </html>
